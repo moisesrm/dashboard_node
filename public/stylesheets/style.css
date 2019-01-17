@@ -1,0 +1,131 @@
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ECEFF1;
+}
+
+main, #sidebar {
+  min-height: calc(100vh - 35px);
+}
+
+header, footer {
+  color: #ECEFF1;
+  padding: 10px 50px;
+  position: relative;
+  width: 100%;
+  max-height: 35px;
+  background-color: #212121;
+}
+
+footer {
+  bottom: 0px;
+}
+
+header {
+  top: 0px;
+}
+
+.button, button {
+  text-align: center;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #212121;
+  color: #FAFAFA;
+}
+
+#content {
+  float: left;
+  width: calc(100vw - 75px);
+  padding: 10px 0;
+}
+
+.box-content {
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #FAFAFA;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sidebar {
+  padding: 0px;
+  max-width: 60px;
+}
+
+#sidebar .button, header .button {
+  padding: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.indicadores div {
+  margin: 0 0 10px 0;
+}
+.indicadores .text-indicators {
+  padding-top: 6px;
+}
+
+#btn-pag-atual {
+  border-radius: 50px;
+}
+
+.formulario {
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+.formulario input {
+  border: 0px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.formulario .button {
+  border: 0px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.head-task-important,
+.head-task-not-important,
+.head-task-urgent,
+.head-task-not-urgent {
+  text-align: center;
+}
+
+.head-task-important,
+.head-task-not-important {
+  position: relative;
+  left: 45px;
+  top: 20px;
+  margin: 0 0 10px 1px;
+  height: 130px;
+  width: 0px;
+  transform: rotate(-90deg);
+  text-align: left;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=style.css.map */

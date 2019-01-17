@@ -1,0 +1,29 @@
+extends includes/main
+
+block content 
+    div.col-12
+      div.box-content.no-margin
+        div.col-12 Home > 
+        div.box.col-12
+          div.box.col-12
+            div.col-5.float-left.head-task-urgent  URGENT
+            div.col-5.float-left.head-task-not-urgent NOT URGENT
+          div.clear
+          div.box.col-12
+            div.col-2.float-left.head-task-important IMPORTANT
+            div.col-5.float-left.box-task-1
+              p Welcome to #{title}
+              a(href="http://www.google.com") Google
+            div.col-5.float-left.box-task-2
+              p Welcome to #{title}
+              a(href="http://www.google.com") Google
+          div.clear
+          div.box.col-12
+            div.col-2.float-left.head-task-not-important NOT IMPORTANT
+            div.col-5.float-left.box-task-3
+              p Welcome to #{title}
+              a(href="http://www.google.com") Google
+            div.col-5.float-left.box-task-4
+              p Welcome to #{title}
+              a(href="http://www.google.com") Google
+          div.clear

@@ -1,0 +1,124 @@
+@import 'reset';
+@import 'theme';
+
+$padding: 10px 50px; 
+$min-heigth: calc(100vh - 35px);
+
+body{
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: map-get($color, secondary); 
+}
+
+main, #sidebar{ min-height: $min-heigth; }
+
+header, footer{ 
+  color: map-get($color, secondary); 
+  padding: $padding;
+  position: relative;
+  width: 100%;
+  max-height: 35px;
+  background-color: map-get($color, background );
+}
+
+footer{ bottom: 0px; }
+header{ top: 0px; }
+
+.button, button{ 
+  text-align: center; 
+  border-radius: 5px;
+  margin: 5px;
+  background-color: map-get($color, background);
+  color: map-get($color, surface);
+}
+
+#content{ 
+  float: left; 
+  width: calc(100vw - 75px); 
+  padding: 10px 0;
+}
+
+.box-content{
+  border-radius: 6px;
+  padding: 10px;
+  background-color: map-get($color, surface);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sidebar{ 
+  padding: 0px; 
+  max-width: 60px;
+}
+
+#sidebar,header{
+  .button{ 
+    padding: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+.indicadores{ 
+  div{ margin: 0 0 10px 0; }
+  .text-indicators{ padding-top: 6px; }
+}
+
+#btn-pag-atual{ border-radius: 50px; }
+
+.formulario{
+  input{
+    border: 0px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .button{ 
+    border: 0px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+
+
+.head-task-important,
+.head-task-not-important,
+.head-task-urgent,
+.head-task-not-urgent{
+  text-align: center;
+}
+
+// .head-task-important,
+// .head-task-not-important{
+//   display: inline-block;
+//   bottom: 0;
+//   margin: 0 0 20px 10px;
+//   padding: 0;
+//   height: 130px;
+//   transform: rotate(-90deg);
+//   text-align: left;
+//   white-space: nowrap;
+// }
+
+.head-task-important,
+.head-task-not-important{
+  position: relative;
+  left: 45px;
+  top: 20px;
+  margin: 0 0 10px 1px;
+  height: 130px;
+  width: 0px;
+  transform: rotate(-90deg);
+  text-align: left;
+  white-space: nowrap;
+}
