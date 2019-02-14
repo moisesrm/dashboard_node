@@ -1,0 +1,20 @@
+div.col-12.modal
+  div.box-content.no-margin
+    form(action="", method="get")
+      input(type="text", name="task", placeholder="Task")
+      span.error-validation 
+        i.material-icons report 
+        span(id="validation-task") Erro x
+      input(type="text", name="description", placeholder="Descricao")
+      input(type="text", name="start_date", placeholder="Start Date")
+      input(type="text", name="end_date", placeholder="End Date")
+      input(type="text", name="time", placeholder="Approximate Time")
+      input(type="text", name="tag", placeholder="Tag")
+      select(name="importance")
+        option Importance
+        option(value="1") Important & Urgent
+        option(value="2") Not Important & Urgent
+        option(value="3") Important & Not Urgent
+        option(value="4") Not Important & Not Urgent
+      <br />
+      input(type="button", value="add", alt="add", title="add", class="material-icons button")

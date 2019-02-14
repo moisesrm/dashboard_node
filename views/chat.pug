@@ -1,33 +1,68 @@
 extends includes/main
 
 block content 
-  div.row.col-12.no-margin.no-padding
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Clock' title='Clock').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons access_time
-          span.col-11.text-indicators 24:00 PM
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Notifications' title='Notifications').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons notifications
-          span.col-11.text-indicators You don't have notifications
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Task' title='Task').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons list_alt
-          span.col-11.text-indicators Create layout for dashboard
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Date' title='Date').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons calendar_today
-          span.col-11.text-indicators 00/00/0000
+  div.col-12
+    div.box-content.no-margin
+      include includes/forms  
+      div.col-12 Home > 
 
-  
-    div.col-12
-      div.box-content
-        div.col-12 Home > 
-        div.box.col-5
-          h1=title
-          p Welcome to #{title}
-          a(href="http://www.google.com") Google
+      hr.clear
+
+      div.col-3.no-padding.no-marging#contacts
+
+        div.col-12.chat-person
+          span.col-2.float-left.icon-chat.material-icons account_circle
+          div.col-10.no-padding.no-margin
+            div.col-12
+              span.nome-chat Fulano
+            div.col-12
+              span.message-chat Lorem Ipsum ...
+
+        div.col-12.chat-group.no-padding-no-margin
+          span.col-2.float-left.icon-chat.material-icons supervised_user_circle
+          div.col-10.no-padding.no-margin
+            div.col-12
+              span.nome-chat Group Fulano
+            div.col-12
+              span.message-chat Lorem Ipsum ...
+      
+      
+      div.col-6.no-padding.no-marging#chat
+        div 
+          div.col-12#title
+            span.col-1.float-left.icon-chat.right.material-icons account_circle
+            span.col-11.no-padding-no-margin.left
+              span.text Person
+            center
+              hr.col-11
+
+          div.clear
+
+          div.col-12.talk.no-padding
+            center
+              div.col-11.chat-to
+                span.float-left.icon-chat.material-icons account_circle
+                div.text
+                  span Person
+
+              div.col-11.chat-from
+                span.float-right.icon-chat.material-icons account_circle
+                div.text
+                  span Person
+
+              hr.col-11
+
+              div.col-11.chat-text
+                input(type="button", value="send", alt="send", title="send", class="material-icons button")
+                input(type="textarea", col="2",name="message", placeholder="Hi")
+                div.clear
+      
+      
+      div.col-3.no-padding.no-marging#calendar
+        div.col-12 
+          span CALENDARIO
+        div.col-12 
+          span.col-12 
+            span TASKS DO DIA DO CALENDARIO
+
+      div.clear

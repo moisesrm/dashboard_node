@@ -1,29 +1,66 @@
 extends includes/main
 
 block content 
-    div.col-12
-      div.box-content.no-margin
-        div.col-12 Home > 
-        div.box.col-12
+  div.col-12
+    div.box-content.no-margin
+      include includes/forms  
+      div.col-12 Home > 
+
+      hr.clear
+
+      div.col-12.no-padding.no-marging
+        div.box.col-md-4.col-sm-12.float-right.no-padding#box-notes
+          div.box.col-12.no-padding.no-margin
+            div.col-12.head-notes.no-padding.no-margin NOTES
+            div.col-12#content-notes.no-padding.no-margin 
+              div.col-12.note 
+                textarea(name="", rows="18")
+        
+        div.box.col-md-8.col-sm-12.float-left.no-padding
           div.box.col-12
-            div.col-5.float-left.head-task-urgent  URGENT
+            div.col-6.float-left.head-task-urgent  URGENT
             div.col-5.float-left.head-task-not-urgent NOT URGENT
           div.clear
           div.box.col-12
             div.col-2.float-left.head-task-important IMPORTANT
-            div.col-5.float-left.box-task-1
-              p Welcome to #{title}
-              a(href="http://www.google.com") Google
-            div.col-5.float-left.box-task-2
-              p Welcome to #{title}
-              a(href="http://www.google.com") Google
+            div.col-5.float-left#box-task-1
+            div.col-5.float-left#box-task-2
           div.clear
           div.box.col-12
             div.col-2.float-left.head-task-not-important NOT IMPORTANT
-            div.col-5.float-left.box-task-3
-              p Welcome to #{title}
-              a(href="http://www.google.com") Google
-            div.col-5.float-left.box-task-4
-              p Welcome to #{title}
-              a(href="http://www.google.com") Google
+            div.col-5.float-left#box-task-3
+            div.col-5.float-left#box-task-4
           div.clear
+        div.clear
+
+      hr.clear
+
+      div.col-12.no-padding.no-marging
+        div.table-div
+          div.table-line.col-12
+            div.col-3 task
+            div.col-3 time
+            div.col-3 date
+            div.col-3 priority
+          
+          div.table-line.col-12.task
+            span.drag-icon.material-icons more_vert
+            div.col-3 TASK 1 - task
+            div.col-md-3.hide-sm TASK 1 - time
+            div.col-md-3.hide-sm TASK 1 - date
+            div.col-md-3.hide-sm TASK 1 - priority
+          
+          div.table-line.col-12.task
+              span.drag-icon.material-icons more_vert
+              div.col-3 TASK 1 - task
+              div.col-3 TASK 1 - time
+              div.col-3 TASK 1 - date
+              div.col-3 TASK 1 - priority
+
+          div.clear
+        div.clear
+
+block scripts
+  script(src='https://code.jquery.com/jquery-1.12.4.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+  script(src='/javascripts/dragnode.js')

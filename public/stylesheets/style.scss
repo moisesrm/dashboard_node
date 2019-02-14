@@ -1,8 +1,18 @@
 @import 'reset';
 @import 'theme';
 
+%button{
+  padding: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+  margin: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 $padding: 10px 50px; 
 $min-heigth: calc(100vh - 35px);
+$shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 body{
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -27,6 +37,7 @@ header{ top: 0px; }
   text-align: center; 
   border-radius: 5px;
   margin: 5px;
+  border-color: map-get($color, background);
   background-color: map-get($color, background);
   color: map-get($color, surface);
 }
@@ -41,7 +52,7 @@ header{ top: 0px; }
   border-radius: 6px;
   padding: 10px;
   background-color: map-get($color, surface);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: $shadow;
 }
 
 #sidebar{ 
@@ -50,13 +61,16 @@ header{ top: 0px; }
 }
 
 #sidebar,header{
-  .button{ 
-    padding: 10px;
-    font-size: 20px;
-    vertical-align: middle;
-    margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+  .button{  @extend %button; }
+  .button[title='Home']:hover{ color: blue; }
+  .button[title='Profile']:hover{ color: grey;  }
+  .button[title='Tasks']:hover{ color: orangered;  }
+  .button[title='Chat']:hover{ color: yellow;  }
+  .button[title='Logout']:hover{ color: red; }
+}
+
+form input[type=button]{ 
+  @extend %button;
 }
 
 .indicadores{ 
@@ -74,14 +88,14 @@ header{ top: 0px; }
     border-radius: 6px;
     margin-bottom: 10px;
     width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: $shadow;
   }
 
   .button{ 
     border: 0px;
     padding: 10px;
     margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: $shadow;
   }
 
   width: 300px;
@@ -90,25 +104,12 @@ header{ top: 0px; }
   position: relative;
 }
 
-
 .head-task-important,
 .head-task-not-important,
 .head-task-urgent,
 .head-task-not-urgent{
   text-align: center;
 }
-
-// .head-task-important,
-// .head-task-not-important{
-//   display: inline-block;
-//   bottom: 0;
-//   margin: 0 0 20px 10px;
-//   padding: 0;
-//   height: 130px;
-//   transform: rotate(-90deg);
-//   text-align: left;
-//   white-space: nowrap;
-// }
 
 .head-task-important,
 .head-task-not-important{
@@ -121,4 +122,205 @@ header{ top: 0px; }
   transform: rotate(-90deg);
   text-align: left;
   white-space: nowrap;
+}
+
+.head-task-important{ top: 40px; }
+.head-task-not-important{ top: 60px; }
+
+div[id^=box-task]{
+  min-height: 133px;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: $shadow;
+  &:nth-child(even){ margin-right: 20px; }
+}
+
+form {
+  .error-validation{
+    margin-left: 24px;
+    color: red;
+
+    span{
+      position: relative;
+      top: -6px;
+    }
+
+  }
+  
+  select,input{
+    border-radius: 5px;
+    min-height: 10px;
+    border: 2px solid;
+    background-color: #FFF;
+    padding: 10px;
+
+    &::placeholder{ color: map-get($color, primary) }
+  }
+
+  select{ 
+    min-height: 19px; 
+    padding-bottom: 12px;
+  }
+
+  select,
+  input[type="text"],
+  input[type="textarea"],
+  input[type="password"]{
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: $shadow;
+  }
+}
+
+#box-notes{
+  position: relative;
+  left: -50px;
+  .head-notes{ text-align: center; }
+}
+.note {
+  textarea{
+    min-width: 33vw;
+  }
+}
+
+
+.table-div{
+  border-radius: 5px;
+  width: 100%;
+  border: 2px solid;
+  box-shadow: $shadow;
+  clear: both;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.table-div, div[id^=box-task]{
+  .table-line{
+    width: 100% !important;
+    max-height: 29px !important;
+    text-align: center;
+    text-transform: uppercase;
+    clear: both;
+    
+    div{ 
+      padding: 5px;
+      float: left;
+    }
+  
+    .drag-icon{
+      float: left;
+      position: absolute;
+    }
+  }
+
+  .task{
+    float: left;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+}
+
+.table-div {
+  .table-line{
+    .drag-icon{ left: 5px; }
+  }  
+  .task{ background: map-get($color, secondary); }
+  .task-dragging{ width: 30% !important; }
+}
+
+div[id^=box-task]{
+  .table-line{
+    .drag-icon{ 
+      left: 0px; 
+      z-index: 1px;
+    }
+  }
+  .task{ 
+    background: map-get($color, secondary);
+    color: map-get($color, primary);
+  }
+}
+
+.modal{
+  background-color: map-get($color, primary);
+  padding: 20px 15%;
+}
+
+#contacts{
+  float:left;
+  .chat-person, .chat-group{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    .icon-chat{
+      padding: 2px 0px;
+    }
+  }
+}
+
+#chat{
+  float:left;
+  #title{
+    padding: 0px 10px 10px 10px;
+    .icon-chat{ }
+    .text{ 
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .talk{
+    .icon-chat{ padding-left: 5px; }
+    div[class*="chat-"]{
+      padding: 7px 0 0 0;
+      border: 1px solid;
+      border-radius: 5px;
+      min-height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .text{ margin: 5px; }
+
+    .chat-to{
+      text-align: left;
+      background-color: map-get($color, primary);
+      color: map-get($color, secondary);
+      .icon-chat{ padding-left: 5px; }
+      .text{ margin-left: 38px; }
+    }
+
+    .chat-from{
+      text-align: right;
+      background-color: map-get($color, secondary);
+      border: map-get($color, secondary) !important;
+      .icon-chat{ 
+        padding-right: 5px; 
+        color: map-get($color, primary);
+      }
+      .text{ margin-right: 38px; }
+    }
+
+    .chat-text{
+      padding: 0px !important;
+      input[type="textarea"]{
+        float: left;
+        width: 85%;
+        margin: 10px;
+        padding: 5px 0 15px 0 ;
+      }
+
+      input[type="button"]{
+        float: right;
+        height: 45px;
+      }
+    }
+  }
+}
+
+#calendar{
+  border: 1px solid; 
+  float:left;
 }

@@ -15,6 +15,24 @@ html, body, ul, ol {
   clear: both;
 }
 
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+form input[type=button], #sidebar .button, header .button {
+  padding: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+  margin: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #ECEFF1;
@@ -45,6 +63,7 @@ header {
   text-align: center;
   border-radius: 5px;
   margin: 5px;
+  border-color: #212121;
   background-color: #212121;
   color: #FAFAFA;
 }
@@ -67,12 +86,20 @@ header {
   max-width: 60px;
 }
 
-#sidebar .button, header .button {
-  padding: 10px;
-  font-size: 20px;
-  vertical-align: middle;
-  margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#sidebar .button[title=Home]:hover, header .button[title=Home]:hover {
+  color: blue;
+}
+#sidebar .button[title=Profile]:hover, header .button[title=Profile]:hover {
+  color: grey;
+}
+#sidebar .button[title=Tasks]:hover, header .button[title=Tasks]:hover {
+  color: orangered;
+}
+#sidebar .button[title=Chat]:hover, header .button[title=Chat]:hover {
+  color: yellow;
+}
+#sidebar .button[title=Logout]:hover, header .button[title=Logout]:hover {
+  color: red;
 }
 
 .indicadores div {
@@ -126,6 +153,202 @@ header {
   transform: rotate(-90deg);
   text-align: left;
   white-space: nowrap;
+}
+
+.head-task-important {
+  top: 40px;
+}
+
+.head-task-not-important {
+  top: 60px;
+}
+
+div[id^=box-task] {
+  min-height: 133px;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+div[id^=box-task]:nth-child(even) {
+  margin-right: 20px;
+}
+
+form .error-validation {
+  margin-left: 24px;
+  color: red;
+}
+form .error-validation span {
+  position: relative;
+  top: -6px;
+}
+form select, form input {
+  border-radius: 5px;
+  min-height: 10px;
+  border: 2px solid;
+  background-color: #FFF;
+  padding: 10px;
+}
+form select::placeholder, form input::placeholder {
+  color: #424242;
+}
+form select {
+  min-height: 19px;
+  padding-bottom: 12px;
+}
+form select,
+form input[type=text],
+form input[type=textarea],
+form input[type=password] {
+  margin-top: 10px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#box-notes {
+  position: relative;
+  left: -50px;
+}
+#box-notes .head-notes {
+  text-align: center;
+}
+
+.note textarea {
+  min-width: 33vw;
+}
+
+.table-div {
+  border-radius: 5px;
+  width: 100%;
+  border: 2px solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  clear: both;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.table-div .table-line, div[id^=box-task] .table-line {
+  width: 100% !important;
+  max-height: 29px !important;
+  text-align: center;
+  text-transform: uppercase;
+  clear: both;
+}
+.table-div .table-line div, div[id^=box-task] .table-line div {
+  padding: 5px;
+  float: left;
+}
+.table-div .table-line .drag-icon, div[id^=box-task] .table-line .drag-icon {
+  float: left;
+  position: absolute;
+}
+.table-div .task, div[id^=box-task] .task {
+  float: left;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.table-div .table-line .drag-icon {
+  left: 5px;
+}
+.table-div .task {
+  background: #ECEFF1;
+}
+.table-div .task-dragging {
+  width: 30% !important;
+}
+
+div[id^=box-task] .table-line .drag-icon {
+  left: 0px;
+  z-index: 1px;
+}
+div[id^=box-task] .task {
+  background: #ECEFF1;
+  color: #424242;
+}
+
+.modal {
+  background-color: #424242;
+  padding: 20px 15%;
+}
+
+#contacts {
+  float: left;
+}
+#contacts .chat-person, #contacts .chat-group {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+#contacts .chat-person .icon-chat, #contacts .chat-group .icon-chat {
+  padding: 2px 0px;
+}
+
+#chat {
+  float: left;
+}
+#chat #title {
+  padding: 0px 10px 10px 10px;
+}
+#chat #title .text {
+  position: relative;
+  top: 5px;
+}
+#chat .talk .icon-chat {
+  padding-left: 5px;
+}
+#chat .talk div[class*=chat-] {
+  padding: 7px 0 0 0;
+  border: 1px solid;
+  border-radius: 5px;
+  min-height: 40px;
+  margin-bottom: 10px;
+}
+#chat .talk .text {
+  margin: 5px;
+}
+#chat .talk .chat-to {
+  text-align: left;
+  background-color: #424242;
+  color: #ECEFF1;
+}
+#chat .talk .chat-to .icon-chat {
+  padding-left: 5px;
+}
+#chat .talk .chat-to .text {
+  margin-left: 38px;
+}
+#chat .talk .chat-from {
+  text-align: right;
+  background-color: #ECEFF1;
+  border: #ECEFF1 !important;
+}
+#chat .talk .chat-from .icon-chat {
+  padding-right: 5px;
+  color: #424242;
+}
+#chat .talk .chat-from .text {
+  margin-right: 38px;
+}
+#chat .talk .chat-text {
+  padding: 0px !important;
+}
+#chat .talk .chat-text input[type=textarea] {
+  float: left;
+  width: 85%;
+  margin: 10px;
+  padding: 5px 0 15px 0;
+}
+#chat .talk .chat-text input[type=button] {
+  float: right;
+  height: 45px;
+}
+
+#calendar {
+  border: 1px solid;
+  float: left;
 }
 
 /*# sourceMappingURL=style.css.map */
