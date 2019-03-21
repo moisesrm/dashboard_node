@@ -1,68 +1,15 @@
 extends includes/main
 
 block content 
-  div.col-12
-    div.box-content.no-margin
-      include includes/forms  
-      div.col-12 Home > 
+  div.box-content
+    div.breadcrumb Home > 
 
-      hr.clear
+    div.col-3.no-padding.no-marging.float-left
+      include chat/contacts
+    
+    div.col-6.float-left
+      include chat/chat
 
-      div.col-3.no-padding.no-marging#contacts
-
-        div.col-12.chat-person
-          span.col-2.float-left.icon-chat.material-icons account_circle
-          div.col-10.no-padding.no-margin
-            div.col-12
-              span.nome-chat Fulano
-            div.col-12
-              span.message-chat Lorem Ipsum ...
-
-        div.col-12.chat-group.no-padding-no-margin
-          span.col-2.float-left.icon-chat.material-icons supervised_user_circle
-          div.col-10.no-padding.no-margin
-            div.col-12
-              span.nome-chat Group Fulano
-            div.col-12
-              span.message-chat Lorem Ipsum ...
-      
-      
-      div.col-6.no-padding.no-marging#chat
-        div 
-          div.col-12#title
-            span.col-1.float-left.icon-chat.right.material-icons account_circle
-            span.col-11.no-padding-no-margin.left
-              span.text Person
-            center
-              hr.col-11
-
-          div.clear
-
-          div.col-12.talk.no-padding
-            center
-              div.col-11.chat-to
-                span.float-left.icon-chat.material-icons account_circle
-                div.text
-                  span Person
-
-              div.col-11.chat-from
-                span.float-right.icon-chat.material-icons account_circle
-                div.text
-                  span Person
-
-              hr.col-11
-
-              div.col-11.chat-text
-                input(type="button", value="send", alt="send", title="send", class="material-icons button")
-                input(type="textarea", col="2",name="message", placeholder="Hi")
-                div.clear
-      
-      
-      div.col-3.no-padding.no-marging#calendar
-        div.col-12 
-          span CALENDARIO
-        div.col-12 
-          span.col-12 
-            span TASKS DO DIA DO CALENDARIO
-
-      div.clear
+    div.col-3.no-padding.no-marging.float-left#calendar-side
+      include calendar/calendar      
+    div.clear

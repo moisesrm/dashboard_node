@@ -1,33 +1,37 @@
 extends includes/main
 
 block content 
-  div.row.col-12.no-margin.no-padding
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Clock' title='Clock').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons access_time
-          span.col-11.text-indicators 24:00 PM
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Notifications' title='Notifications').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons notifications
-          span.col-11.text-indicators You don't have notifications
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Task' title='Task').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons list_alt
-          span.col-11.text-indicators Create layout for dashboard
-    div.col-3.indicadores
-      div.box-content
-        span(alt='Date' title='Date').row.col-12.no-padding.no-margin
-          span.col-1.no-padding.material-icons calendar_today
-          span.col-11.text-indicators 00/00/0000
+  div#indicators
+    div.indicator
+      div.box-content(alt='Clock' title='Clock')
+        span.material-icons access_time
+        span.text-indicators 24:00 PM
+    div.indicator
+      div.box-content(alt='Notifications' title='Notifications')
+        span.material-icons notifications
+        span.text-indicators You don't have notifications
+    div.indicator
+      div.box-content(alt='Task' title='Task')
+        span.material-icons list_alt
+        span.text-indicators Create layout for dashboard
+    div.indicator
+      div.box-content(alt='Date' title='Date')
+        span.material-icons calendar_today
+        span.text-indicators 00/00/0000
 
-  
-    div.col-12
-      div.box-content
-        div.col-12 Home > 
-        div.box.col-5
-          h1=title
-          p Welcome to #{title}
-          a(href="http://www.google.com") Google
+    div.clear
+
+    
+  div.box-content
+    div.breadcrumb Home > 
+    div.box.col-5
+      h1=title
+      p Welcome to #{title}
+      a(href="http://www.google.com") Google
+    br
+    include calendar/calendar
+    br
+    include chat/chat
+    br
+    include chat/contacts
+    div.clear

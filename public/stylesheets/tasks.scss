@@ -1,0 +1,105 @@
+
+#box-statistic{
+  // position: relative;
+  width: 100%;
+  .head-statistic{ 
+    text-align: center; 
+    margin-bottom: 10px;
+  }
+  #content-statistic{
+    box-shadow: $shadow;
+    border: 1px solid;
+    border-radius: 5px;
+    min-height: 280px;
+  }
+}
+
+.task-organizer{
+  div[class$=important]{
+    position: relative;
+    left: -1%;
+    margin: 0 5px;
+    width: 2%;
+    transform: rotate(-90deg);
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .head-task-important{ top: 90px; }
+  .head-task-not-important{ top: 104px; }
+
+  div[class$=urgent]{ 
+    text-align: center;
+    width: 50%; 
+    margin-bottom: 10px;
+  }
+  
+}
+
+.table-div{
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid;
+  box-shadow: $shadow;
+  clear: both;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.table-div, div[id^=box-task]{
+  .table-line{
+    width: 100% !important;
+    max-height: 29px !important;
+    text-align: center;
+    text-transform: uppercase;
+    clear: both;
+    
+    div{ 
+      padding: 5px;
+      float: left;
+    }
+  
+    .drag-icon{
+      float: left;
+      position: absolute;
+    }
+  }
+
+  .task{
+    float: left;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+}
+
+.table-div {
+  .table-line{
+    .drag-icon{ left: 5px; }
+  }
+  .task{ background: map-get($color, secondary); }
+  .task-dragging{ width: 30% !important; }
+}
+
+
+div[id^=box-task]{
+  min-height: 133px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: $shadow;
+  width: 46%;
+  
+  &:nth-child(even){ margin-right: 3.6%; }
+  .table-line{
+    .drag-icon{ 
+      left: 0px; 
+      z-index: 1px;
+    }
+  }
+  .task{ 
+    background: map-get($color, secondary);
+    color: map-get($color, primary);
+  }
+  .task-dragging{ width: 30% !important; }
+}

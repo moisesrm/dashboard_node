@@ -1,0 +1,29 @@
+div.col-12#calendar
+  div#month-title 
+    div.float-left.material-icons chevron_left
+    span MONTH
+    div.float-right.material-icons chevron_right
+    hr.clear
+  
+  div#month
+    div#week-title
+      each day in ["Sun","Mon", "Tue", "Wen", "Thu", "Fri", "Sat"]
+        div#day
+          span= day
+    
+    - var i = 0
+    while i < 4
+      - i++
+      
+      div#week
+        - var n = 0
+        while n < 7
+          - n++
+          div#day
+            span= "DAY "+n*i
+      div.clear
+div.clear
+div.col-12#tasks-day
+  span.col-12
+    span#tasks-title TASKS OF DAY
+    span.material-icons.float-right expand_more

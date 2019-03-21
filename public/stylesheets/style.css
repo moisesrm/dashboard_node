@@ -77,6 +77,7 @@ header {
 .box-content {
   border-radius: 6px;
   padding: 10px;
+  margin: 0 0.5%;
   background-color: #FAFAFA;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -86,27 +87,55 @@ header {
   max-width: 60px;
 }
 
-#sidebar .button[title=Home]:hover, header .button[title=Home]:hover {
-  color: blue;
-}
-#sidebar .button[title=Profile]:hover, header .button[title=Profile]:hover {
-  color: grey;
-}
-#sidebar .button[title=Tasks]:hover, header .button[title=Tasks]:hover {
-  color: orangered;
-}
-#sidebar .button[title=Chat]:hover, header .button[title=Chat]:hover {
-  color: yellow;
-}
-#sidebar .button[title=Logout]:hover, header .button[title=Logout]:hover {
-  color: red;
+.breadcrumb {
+  width: 100%;
+  background-color: #FAFAFA;
+  height: 30px;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 10px;
+  padding: 10px 10px 25px 10px;
+  border-radius: 0px;
+  clear: both;
 }
 
-.indicadores div {
-  margin: 0 0 10px 0;
+#close_modal {
+  cursor: pointer !important;
 }
-.indicadores .text-indicators {
-  padding-top: 6px;
+
+#indicators {
+  width: 100%;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.indicator {
+  width: 24.4%;
+  float: left;
+  margin: 0 0.3%;
+}
+.indicator .text-indicators {
+  position: relative;
+  top: -6px;
+  margin-left: 1%;
+}
+
+#sidebar .button:hover, header .button:hover {
+  color: #424242;
+}
+#sidebar .button[title=Home]:hover, header .button[title=Home]:hover {
+  background-color: blue;
+}
+#sidebar .button[title=Profile]:hover, header .button[title=Profile]:hover {
+  background-color: grey;
+}
+#sidebar .button[title=Tasks]:hover, header .button[title=Tasks]:hover {
+  background-color: orangered;
+}
+#sidebar .button[title=Chat]:hover, header .button[title=Chat]:hover {
+  background-color: yellow;
+}
+#sidebar .button[title=Logout]:hover, header .button[title=Logout]:hover {
+  background-color: red;
 }
 
 #btn-pag-atual {
@@ -135,45 +164,6 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.head-task-important,
-.head-task-not-important,
-.head-task-urgent,
-.head-task-not-urgent {
-  text-align: center;
-}
-
-.head-task-important,
-.head-task-not-important {
-  position: relative;
-  left: 45px;
-  top: 20px;
-  margin: 0 0 10px 1px;
-  height: 130px;
-  width: 0px;
-  transform: rotate(-90deg);
-  text-align: left;
-  white-space: nowrap;
-}
-
-.head-task-important {
-  top: 40px;
-}
-
-.head-task-not-important {
-  top: 60px;
-}
-
-div[id^=box-task] {
-  min-height: 133px;
-  border: 2px solid;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-div[id^=box-task]:nth-child(even) {
-  margin-right: 20px;
-}
-
 form .error-validation {
   margin-left: 24px;
   color: red;
@@ -185,7 +175,7 @@ form .error-validation span {
 form select, form input {
   border-radius: 5px;
   min-height: 10px;
-  border: 2px solid;
+  border: 1px solid;
   background-color: #FFF;
   padding: 10px;
 }
@@ -205,22 +195,50 @@ form input[type=password] {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#box-notes {
-  position: relative;
-  left: -50px;
-}
-#box-notes .head-notes {
-  text-align: center;
+.modal {
+  background-color: #42424282;
+  padding: 20px 15%;
 }
 
-.note textarea {
-  min-width: 33vw;
+#box-statistic {
+  width: 100%;
+}
+#box-statistic .head-statistic {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#box-statistic #content-statistic {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid;
+  border-radius: 5px;
+  min-height: 280px;
+}
+
+.task-organizer div[class$=important] {
+  position: relative;
+  left: -1%;
+  margin: 0 5px;
+  width: 2%;
+  transform: rotate(-90deg);
+  text-align: left;
+  white-space: nowrap;
+}
+.task-organizer .head-task-important {
+  top: 90px;
+}
+.task-organizer .head-task-not-important {
+  top: 104px;
+}
+.task-organizer div[class$=urgent] {
+  text-align: center;
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 .table-div {
   border-radius: 5px;
   width: 100%;
-  border: 2px solid;
+  border: 1px solid;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   clear: both;
   min-height: 150px;
@@ -244,7 +262,7 @@ form input[type=password] {
 }
 .table-div .task, div[id^=box-task] .task {
   float: left;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 5px;
   margin: 5px 0;
 }
@@ -259,6 +277,17 @@ form input[type=password] {
   width: 30% !important;
 }
 
+div[id^=box-task] {
+  min-height: 133px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 46%;
+}
+div[id^=box-task]:nth-child(even) {
+  margin-right: 3.6%;
+}
 div[id^=box-task] .table-line .drag-icon {
   left: 0px;
   z-index: 1px;
@@ -267,10 +296,8 @@ div[id^=box-task] .task {
   background: #ECEFF1;
   color: #424242;
 }
-
-.modal {
-  background-color: #424242;
-  padding: 20px 15%;
+div[id^=box-task] .task-dragging {
+  width: 30% !important;
 }
 
 #contacts {
@@ -281,6 +308,7 @@ div[id^=box-task] .task {
   border-radius: 5px;
   padding: 5px 10px;
   margin-bottom: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #contacts .chat-person .icon-chat, #contacts .chat-group .icon-chat {
   padding: 2px 0px;
@@ -288,11 +316,23 @@ div[id^=box-task] .task {
 
 #chat {
   float: left;
+  padding: 10px 0px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  border: 1px solid;
 }
 #chat #title {
   padding: 0px 10px 10px 10px;
 }
-#chat #title .text {
+#chat #title hr {
+  margin: 10px 0;
+}
+#chat #title #chat-title .icon-chat {
+  position: relative;
+  left: -1%;
+}
+#chat #title #chat-title .text {
   position: relative;
   top: 5px;
 }
@@ -303,16 +343,16 @@ div[id^=box-task] .task {
   padding: 7px 0 0 0;
   border: 1px solid;
   border-radius: 5px;
-  min-height: 40px;
   margin-bottom: 10px;
 }
 #chat .talk .text {
   margin: 5px;
 }
 #chat .talk .chat-to {
+  min-height: 40px;
   text-align: left;
   background-color: #424242;
-  color: #ECEFF1;
+  color: #FFF;
 }
 #chat .talk .chat-to .icon-chat {
   padding-left: 5px;
@@ -321,6 +361,7 @@ div[id^=box-task] .task {
   margin-left: 38px;
 }
 #chat .talk .chat-from {
+  min-height: 40px;
   text-align: right;
   background-color: #ECEFF1;
   border: #ECEFF1 !important;
@@ -334,21 +375,73 @@ div[id^=box-task] .task {
 }
 #chat .talk .chat-text {
   padding: 0px !important;
+  height: 35px;
 }
 #chat .talk .chat-text input[type=textarea] {
   float: left;
-  width: 85%;
-  margin: 10px;
-  padding: 5px 0 15px 0;
+  width: 92%;
+  height: 33px;
+  padding-left: 10px;
 }
 #chat .talk .chat-text input[type=button] {
   float: right;
-  height: 45px;
+  border-radius: 0px;
+  margin: 0px;
+  width: 7%;
+  height: 33px;
+}
+
+#calendar-side {
+  float: left;
 }
 
 #calendar {
+  width: 100%;
+  min-height: 20vh;
   border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  padding-left: 7px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#calendar #month-title span {
+  position: relative;
+  top: 5px;
+}
+#calendar #moth {
+  padding-top: 10px;
+}
+#calendar #week-title, #calendar #week {
+  width: 100%;
+}
+#calendar #week-title #day {
+  color: #ECEFF1;
+  background-color: #424242;
+  border-color: #424242;
+  font-weight: bold;
+}
+#calendar #day {
+  width: 12.2%;
+  padding-top: 2px;
+  border: 1px solid;
+  border-radius: 5px;
   float: left;
+  margin: 1%;
+}
+
+#tasks-day {
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#tasks-day #tasks-title {
+  position: relative;
+  top: 7px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
