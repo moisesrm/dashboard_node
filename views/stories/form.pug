@@ -1,0 +1,46 @@
+div#front-card
+  section
+    div.form-input#points-input
+      label(for="points") Points:
+      input#points(type="text", name="points")
+      
+    div.form-input#importance-input
+      label(for="importance") Importance:
+      select#importance(name="importance")
+        option(value="1") 1 
+        option(value="2") 2
+
+  section
+    div.form-input
+      label(for="title") Title:
+      input#title(type="text", name="title")
+
+    div.form-input
+      label(for="role") As a:
+      input#role(type="text", name="role")
+    
+    div.form-input
+      label(for="goal") I want to:
+      input#goal(type="text", name="goal")
+    
+    div.form-input
+      label(for="reason") So that:
+      input#reason(type="text", name="reason")
+
+div#back-card
+  section
+    div.form-input
+      label Criteria Acception
+  section
+    div.criterias
+      div.form-input
+        label(for="title") Given:
+        input#title(type="text", name="title")
+  
+      div.form-input
+        label(for="role") When:
+        input#role(type="text", name="role")
+      
+      div.form-input
+        label(for="goal") Then:
+        input#goal(type="text", name="goal")

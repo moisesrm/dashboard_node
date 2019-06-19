@@ -1,31 +1,19 @@
-function Task(name, description, prioroty) {
-  this.id = NULL
-  this.name = (name == undefined) ? name : NULL
-  this.description = (description == undefined) ? description : NULL
-  this.prioroty = (prioroty == undefined) ? prioroty : 0
-  this.time = 0
-  this.date = Date.now()
+var mongoose = require('./model');
 
-  this.create = function (request) {
-    if (typeof (req) !== Object) { return false; }
-    this.name = req.name
-    this.description = req.description
-    this.prioroty = req.prioroty
-    this.time = req.time
-    this.date = req.date
-    return this
-  }
+var taskSchema = new mongoose.Schema({  
+  name: { type: String, required: true },
+  description: String,  
+  priority: { type: Number, default: 0 },
+  time: Number,
+  date: { type: Date, default: new Date() },
+});  
 
-  this.updataskModulete = function (request) {
-    if (typeof (req) !== Object) { return false; }
-    this.name = req.name
-    this.description = req.description
-    this.prioroty = req.prioroty
-    this.time = req.time
-    this.date = req.date
-    return this
-  }
+taskSchema.methods.toString = function(){
+  return `Task: ${this.name}\n
+    Description: ${this.description}\n
+    Priority: ${this.priority}\n
+    Expected Time: ${this.time}\n
+    Start Date: ${this.date}`;
 }
 
-
-module.exports = Task;
+module.exports = mongoose.model('Task', taskSchema);

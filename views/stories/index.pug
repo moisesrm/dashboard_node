@@ -1,0 +1,27 @@
+extends layout/layout.pug
+
+block article
+  article#user-story
+    div#user-stories
+      button(onclick="$('#card').append($('template').html())") 
+        span.material-icons add
+
+      span.story-card
+        span story1
+        span points:
+        span importance:
+
+      span.story-card
+        span story1
+        span points:
+        span importance:
+
+      span.story-card
+        span story1 John Newman - Love Me Again
+        span points:
+        span importance:
+
+    div#card
+    
+  template
+    include stories/form.pug

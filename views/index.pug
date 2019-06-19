@@ -1,37 +1,14 @@
-extends includes/main
+extends layout/layout.pug
 
-block content 
-  div#indicators
-    div.indicator
-      div.box-content(alt='Clock' title='Clock')
-        span.material-icons access_time
-        span.text-indicators 24:00 PM
-    div.indicator
-      div.box-content(alt='Notifications' title='Notifications')
-        span.material-icons notifications
-        span.text-indicators You don't have notifications
-    div.indicator
-      div.box-content(alt='Task' title='Task')
-        span.material-icons list_alt
-        span.text-indicators Create layout for dashboard
-    div.indicator
-      div.box-content(alt='Date' title='Date')
-        span.material-icons calendar_today
-        span.text-indicators 00/00/0000
-
-    div.clear
-
-    
-  div.box-content
-    div.breadcrumb Home > 
-    div.box.col-5
-      h1=title
-      p Welcome to #{title}
-      a(href="http://www.google.com") Google
-    br
-    include calendar/calendar
-    br
-    include chat/chat
-    br
-    include chat/contacts
-    div.clear
+block article
+  div#modal
+    div.box
+      div.box-content
+        div#modal-header
+          span teste
+          button.close-btn()
+            span.material-icons close
+        div#content
+          span teste
+        div#footer
+          span teste
